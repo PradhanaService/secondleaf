@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SecondLeaf — Delivering Sustainable Agricultural Solutions. Premium organic products, crop nutrition, and bulk agricultural supplies for farmers and agribusinesses worldwide.">
+  <meta name="keywords"
+    content="agriculture, organic farming, fertilizers, crop nutrition, sustainable agriculture, SecondLeaf">
+  <meta name="author" content="SecondLeaf">
+  <title>SecondLeaf — Sustainable Agricultural Solutions</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+
+  <!-- ============================================================
+       2. SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0"
+    aria-valuemax="100"></div>
+
+  <!-- ============================================================
+       3. STICKY NAVBAR
+       ============================================================ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container container">
+      <a href="#hero" class="nav-logo" aria-label="Second Leaf Home">
+        <img src="assets/images/second-leaf-logo.png" alt="Second Leaf">
+      </a>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about" role="menuitem">About</a></li>
+        <li role="none"><a href="#partners" role="menuitem">Partners</a></li>
+        <li role="none"><a href="#services" role="menuitem">Products</a></li>
+        <li role="none"><a href="#reviews" role="menuitem">Reviews</a></li>
+        <li role="none"><a href="#team" role="menuitem">Team</a></li>
+        <li role="none"><a href="#cta" role="menuitem">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation menu">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#services">Products</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#cta">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       4. HERO SECTION
+       ============================================================ -->
+  <section id="hero" aria-label="Hero section">
+    <div class="hero-slideshow">
+      <div class="hero-slide" style="background-image: url('assets/images/hero/farmer-harvest.jpg');">
+      </div>
+      <div class="hero-slide" style="background-image: url('assets/images/hero/plantation.jpg');">
+      </div>
+      <div class="hero-slide" style="background-image: url('assets/images/hero/cardamom-flower.png');">
+      </div>
+      <div class="hero-slide" style="background-image: url('assets/images/hero/field-row.png');">
+      </div>
+      <div class="hero-slide" style="background-image: url('assets/images/hero/cardamom-stems.png');">
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+      <h1 class="hero-title" id="hero-title">Delivering Sustainable Agricultural Solutions</h1>
+      <p class="hero-subtitle" id="hero-subtitle">Empowering farmers with premium organic products, cutting-edge crop
+        nutrition, and reliable bulk supply — cultivating a greener tomorrow.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary btn-lg">Explore Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. ABOUT COMPANY
+       ============================================================ -->
+  <section id="about" aria-label="About SecondLeaf">
+    <div class="container">
+      <h2 class="section-title reveal">About Us</h2>
+      <p class="section-subtitle reveal">Growing together with nature and innovation</p>
+
+      <div class="about-content about-content-simple">
+        <div class="about-text reveal">
+          <p id="about-description"></p>
+
+          <div class="mission-vision">
+            <div class="mission-card">
+              <h3>Our Mission</h3>
+              <p id="about-mission"></p>
+            </div>
+            <div class="vision-card">
+              <h3>Our Vision</h3>
+              <p id="about-vision"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. PARTNERS
+       ============================================================ -->
+  <section id="partners" aria-label="Our partners">
+    <div class="container">
+      <h2 class="section-title reveal">Our Partners</h2>
+      <p class="section-subtitle reveal">Trusted agricultural brands we work with</p>
+    </div>
+    <div class="partners-track-wrapper">
+      <div class="partners-track" id="partners-track" aria-label="Partner logos carousel">
+        <!-- Rendered by JS from partners array -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. SERVICES
+       ============================================================ -->
+  <section id="services" aria-label="Our services">
+    <div class="container">
+      <h2 class="section-title reveal">Our Services</h2>
+      <p class="section-subtitle reveal">Comprehensive agricultural solutions for every need</p>
+      <div class="services-grid" id="services-grid">
+        <!-- Rendered by JS from services array -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. KEY FIGURES / STATISTICS
+       ============================================================ -->
+  <section id="statistics" aria-label="Key statistics">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery</h2>
+      <p class="section-subtitle reveal">A glimpse into our world</p>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered by JS from gallery (first 6 items) -->
+      </div>
+      <div class="gallery-cta reveal" style="text-align: center; margin-top: 40px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline section removed for clean corporate redesign -->
+
+  <!-- ============================================================
+       9. GALLERY PREVIEW
+       ============================================================ -->
+
+
+
+  <!-- ============================================================
+       11. REVIEWS SECTION
+       ============================================================ -->
+  <section id="reviews" aria-label="Customer reviews">
+    <div class="container">
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <p class="section-subtitle reveal">Trusted by farmers and agribusinesses across India</p>
+    </div>
+    <div class="reviews-track-wrapper">
+      <div class="reviews-track" id="reviews-track" aria-label="Reviews carousel">
+        <!-- Rendered by JS from reviews array (duplicated for infinite scroll) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13. TEAM SECTION
+       ============================================================ -->
+  <section id="team" aria-label="Our team">
+    <div class="container">
+      <h2 class="section-title reveal">Meet Our Team</h2>
+      <p class="section-subtitle reveal">The passionate experts behind SecondLeaf</p>
+      <div class="team-grid" id="team-grid">
+        <div class="team-card reveal">
+          <div class="team-image">
+            <img src="assets/images/karthick.jpg" alt="Mr. M. Karthick Agri" style="object-position: center top;">
+          </div>
+          <div class="team-info">
+            <h3>Mr. M. Karthick Agri</h3>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-image">
+            <img src="assets/images/sathish.jpg" alt="K. Sathish Agri">
+          </div>
+          <div class="team-info">
+            <h3>Mr. K. Sathish Agri</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============================================================
+       15. CALL TO ACTION
+       ============================================================ -->
+  <section id="cta" aria-label="Call to action">
+    <div class="container reveal">
+      <h2>Let's Grow Together</h2>
+      <p>Partner with SecondLeaf for sustainable, high-quality agricultural solutions that make a real difference.</p>
+      <a href="https://wa.me/918608066541" target="_blank" rel="noopener" class="btn btn-lg">Contact Us</a>
+    </div>
+  </section>
+
+
+
+
+  <!-- ============================================================
+       17. FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">
+            <img src="assets/images/second-leaf-logo.png" alt="Second Leaf">
+          </span>
+          <p>Delivering premium agricultural solutions, or ganic inputs, and crop nutrition programs for sustainable
+            farming.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="#cta">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p>AMARAVATI THEATRE,,<br> Odai Karai St, near BUS STAND, Bharathiyar Nagar, Cumbum, Tamil Nadu 625516.</p>
+          <p>Phone: +91 86080 66541</p>
+          <p>Email: secondleafcumbum@gmail.com</p>
+        </div>
+        <div class="footer-map">
+          <h4>Our Location</h4>
+          <iframe src="https://www.google.com/maps?q=Second%20Leaf%20Enterprises&output=embed"
+            title="Second Leaf Enterprises Google Map" width="100%" height="180" style="border:0;border-radius:4px;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SecondLeaf. All Rights Reserved.</p>
+        <div class="footer-social-links">
+
+          <a href="https://www.instagram.com/secondleaf_enterprises/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ============================================================
+       22. TOAST CONTAINER
+       ============================================================ -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- ============================================================
+       23. MODAL OVERLAY
+       ============================================================ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Modal dialog">
+    <div class="modal-content" id="modal-content">
+      <!-- Content injected by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS — data.js first, then app.js
+       ============================================================ -->
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP BUTTON
+       ============================================================ -->
+  <a href="https://wa.me/918608066541" class="whatsapp-float" target="_blank" rel="noopener"
+    aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28"
+      fill="currentColor">
+      <path
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+    </svg>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </a>
+
+</body>
+
+</html>

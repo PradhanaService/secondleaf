@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecondLeaf Admin Dashboard</title>
+  <meta name="description" content="SecondLeaf internal admin dashboard for managing products, reviews, gallery, team, and site settings.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Fonts: Poppins + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       ADMIN LOGIN GATEWAY (Gateway)
+       ============================================================ -->
+  <div id="admin-login-overlay" class="login-overlay">
+    <div class="login-card" id="login-card">
+      <h2 class="login-title">SecondLeaf</h2>
+      <p class="login-subtitle">Sign in to access the SecondLeaf Admin Dashboard</p>
+      
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" required placeholder="Enter username" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required placeholder="Enter password" autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn-block">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SIDEBAR OVERLAY (mobile)
+       ============================================================ -->
+  <div id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       ADMIN LAYOUT
+       ============================================================ -->
+  <div class="admin-layout">
+
+    <!-- ─── SIDEBAR ─── -->
+    <aside id="admin-sidebar" role="navigation" aria-label="Admin navigation">
+      <div class="sidebar-logo">
+        <span class="logo-text">SecondLeaf <small>Admin</small></span>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li class="nav-item">
+          <a href="#" data-section="dashboard" class="active">
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" data-section="products">
+            <span class="nav-label">Products</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" data-section="key-figures">
+            <span class="nav-label">Key Figures</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" data-section="reviews">
+            <span class="nav-label">Reviews</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" data-section="gallery">
+            <span class="nav-label">Gallery</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" data-section="team">
+            <span class="nav-label">Team</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" data-section="settings">
+            <span class="nav-label">Settings</span>
+          </a>
+        </li>
+
+        <li class="nav-divider"></li>
+
+        <li class="nav-item">
+          <a href="index.html" target="_blank" class="nav-link-external">
+            <span class="nav-label">View Site</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" id="logout-btn" class="nav-link-external">
+            <span class="nav-label">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ─── MAIN CONTENT ─── -->
+    <main id="admin-main">
+
+      <!-- Admin Header Bar -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button id="sidebar-toggle" type="button" aria-label="Toggle sidebar">☰</button>
+          <h1 id="page-title">Dashboard</h1>
+        </div>
+        <div class="header-right">
+          <span class="admin-greeting">Welcome, Admin</span>
+          <div class="admin-avatar" title="Admin">A</div>
+        </div>
+      </header>
+
+      <!-- Content Wrapper -->
+      <div id="admin-content" class="admin-content">
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Dashboard
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-dashboard" class="admin-section active">
+
+          <!-- Summary Cards -->
+          <div class="dashboard-cards">
+            <div class="dash-card" id="card-total-products">
+              <div class="card-value" id="stat-products">0</div>
+              <div class="card-label">Total Products</div>
+            </div>
+            <div class="dash-card" id="card-total-clients">
+              <div class="card-value" id="stat-clients">0</div>
+              <div class="card-label">Total Clients</div>
+            </div>
+            <div class="dash-card" id="card-total-reviews">
+              <div class="card-value" id="stat-reviews">0</div>
+              <div class="card-label">Total Reviews</div>
+            </div>
+            <div class="dash-card" id="card-gallery-images">
+              <div class="card-value" id="stat-gallery">0</div>
+              <div class="card-label">Gallery Images</div>
+            </div>
+            <div class="dash-card" id="card-total-orders">
+              <div class="card-value" id="stat-orders">0</div>
+              <div class="card-label">Total Orders</div>
+            </div>
+            <div class="dash-card" id="card-revenue">
+              <div class="card-value" id="stat-revenue">₹0</div>
+              <div class="card-label">Revenue</div>
+            </div>
+          </div>
+
+          <!-- Recent Orders -->
+          <div class="section-sub">
+            <h3 class="sub-title">Recent Orders</h3>
+            <div class="table-wrapper">
+              <table class="admin-table" id="orders-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Items</th>
+                  </tr>
+                </thead>
+                <tbody id="orders-tbody">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Quick Stats: Category Distribution -->
+          <div class="section-sub">
+            <h3 class="sub-title">Product Category Distribution</h3>
+            <div class="quick-stats" id="quick-stats">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Products
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-products" class="admin-section">
+          <div class="section-header">
+            <h2>Product Management</h2>
+            <div class="section-header-actions">
+              <input type="text" class="search-input" id="product-search" placeholder="Search products…">
+              <button class="btn btn-primary" id="btn-add-product">
+                <span>+</span> Add Product
+              </button>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="admin-table" id="products-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>MOQ</th>
+                  <th>Rating</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="products-tbody">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+          <div id="products-empty" class="empty-state" style="display:none;">
+            <div class="empty-text">No products yet</div>
+            <div class="empty-sub">Add your first product to get started.</div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Key Figures
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-key-figures" class="admin-section">
+          <div class="section-header">
+            <h2>Key Figures Management</h2>
+          </div>
+          <div id="key-figures-cards" class="key-figures-grid">
+            <!-- Populated by JS -->
+          </div>
+          <h3 class="sub-title">Live Preview</h3>
+          <div class="kf-preview" id="key-figures-preview">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Reviews
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-reviews" class="admin-section">
+          <div class="section-header">
+            <h2>Review Management</h2>
+            <div class="section-header-actions">
+              <input type="text" class="search-input" id="review-search" placeholder="Search reviews…">
+              <button class="btn btn-primary" id="btn-add-review">
+                <span>+</span> Add Review
+              </button>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="admin-table" id="reviews-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Client</th>
+                  <th>Company</th>
+                  <th>Rating</th>
+                  <th>Review</th>
+                  <th>Location</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="reviews-tbody">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+          <div id="reviews-empty" class="empty-state" style="display:none;">
+            <div class="empty-text">No reviews yet</div>
+            <div class="empty-sub">Add your first review to get started.</div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Gallery
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-gallery" class="admin-section">
+          <div class="section-header">
+            <h2>Gallery Management</h2>
+            <div class="section-header-actions">
+              <button class="btn btn-primary" id="btn-add-gallery">
+                <span>+</span> Add Image
+              </button>
+            </div>
+          </div>
+          <div id="gallery-grid" class="admin-gallery-grid">
+            <!-- Populated by JS -->
+          </div>
+          <div id="gallery-empty" class="empty-state" style="display:none;">
+            <div class="empty-text">No gallery images yet</div>
+            <div class="empty-sub">Add your first image to the gallery.</div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Team
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-team" class="admin-section">
+          <div class="section-header">
+            <h2>Team Management</h2>
+            <div class="section-header-actions">
+              <button class="btn btn-primary" id="btn-add-team">
+                <span>+</span> Add Member
+              </button>
+            </div>
+          </div>
+          <div id="team-grid" class="admin-team-grid">
+            <!-- Populated by JS -->
+          </div>
+          <div id="team-empty" class="empty-state" style="display:none;">
+            <div class="empty-text">No team members yet</div>
+            <div class="empty-sub">Add your first team member.</div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SECTION: Settings
+             ═══════════════════════════════════════════════════════ -->
+        <section id="section-settings" class="admin-section">
+          <div class="section-header">
+            <h2>Settings</h2>
+          </div>
+          <form class="settings-form" id="settings-form" autocomplete="off">
+
+            <!-- Company Settings -->
+            <fieldset class="settings-fieldset">
+              <h3>Company Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="setting-company-name">Company Name</label>
+                  <input type="text" class="form-input" id="setting-company-name">
+                </div>
+                <div class="form-group">
+                  <label for="setting-logo">Logo (emoji / URL)</label>
+                  <input type="text" class="form-input" id="setting-logo">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="setting-phone">Phone</label>
+                  <input type="text" class="form-input" id="setting-phone">
+                </div>
+                <div class="form-group">
+                  <label for="setting-email">Email</label>
+                  <input type="email" class="form-input" id="setting-email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="setting-address">Address</label>
+                <textarea class="form-textarea" id="setting-address" rows="2"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Social Media -->
+            <fieldset class="settings-fieldset">
+              <h3>Social Media Links</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="setting-facebook">Facebook</label>
+                  <input type="url" class="form-input" id="setting-facebook">
+                </div>
+                <div class="form-group">
+                  <label for="setting-instagram">Instagram</label>
+                  <input type="url" class="form-input" id="setting-instagram">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="setting-linkedin">LinkedIn</label>
+                  <input type="url" class="form-input" id="setting-linkedin">
+                </div>
+                <div class="form-group">
+                  <label for="setting-whatsapp">WhatsApp</label>
+                  <input type="url" class="form-input" id="setting-whatsapp">
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Theme Settings -->
+            <fieldset class="settings-fieldset">
+              <h3>Theme Settings</h3>
+              <div class="form-row form-row-3">
+                <div class="form-group">
+                  <label for="setting-primary-color">Primary Color</label>
+                  <input type="color" class="form-input form-color" id="setting-primary-color">
+                </div>
+                <div class="form-group">
+                  <label for="setting-secondary-color">Secondary Color</label>
+                  <input type="color" class="form-input form-color" id="setting-secondary-color">
+                </div>
+                <div class="form-group">
+                  <label for="setting-accent-color">Accent Color</label>
+                  <input type="color" class="form-input form-color" id="setting-accent-color">
+                </div>
+              </div>
+              <div class="color-preview" id="color-preview">
+                <!-- Swatches rendered by JS -->
+              </div>
+            </fieldset>
+
+            <button type="button" class="btn btn-primary btn-lg" id="btn-save-settings">
+              Save Settings
+            </button>
+          </form>
+        </section>
+
+      </div><!-- /.admin-content -->
+    </main>
+  </div><!-- /.admin-layout -->
+
+  <!-- ============================================================
+       MODAL (reusable)
+       ============================================================ -->
+  <div id="admin-modal-overlay">
+    <div id="admin-modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 id="modal-title">Modal Title</h3>
+        <button id="modal-close" type="button" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Injected by JS -->
+      </div>
+      <div class="modal-footer" id="modal-footer">
+        <button class="btn btn-secondary" id="modal-cancel" type="button">Cancel</button>
+        <button class="btn btn-primary" id="modal-save" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CONFIRM DIALOG
+       ============================================================ -->
+  <div id="confirm-overlay">
+    <div id="confirm-dialog" role="alertdialog" aria-modal="true">
+      <p id="confirm-message">Are you sure?</p>
+      <div class="confirm-buttons">
+        <button class="btn btn-secondary" id="confirm-no" type="button">Cancel</button>
+        <button class="btn btn-danger" id="confirm-yes" type="button">Yes, Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST CONTAINER
+       ============================================================ -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- ============================================================
+       SCRIPTS: data.js first, then admin.js
+       ============================================================ -->
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
