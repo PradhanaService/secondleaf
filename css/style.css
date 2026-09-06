@@ -3001,3 +3001,23 @@ section {
 /* ============================================================
    END OF STYLESHEET
    ============================================================ */
+
+/* Partner Logo Background Handling */
+.partner-logo {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.partner-logo img {
+    max-width: 140px;
+    max-height: 100px;
+    object-fit: contain;
+    /* mix-blend-mode: multiply removes WHITE backgrounds. */
+    /* If you have a BLACK background you want to remove, use mix-blend-mode: screen; instead. 
+       Note: 'screen' will make the logo invisible if the container background is #fff (white). */
+    mix-blend-mode: multiply;
+}

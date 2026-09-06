@@ -402,29 +402,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryGrid = document.getElementById('gallery-grid');
 
   if (galleryGrid && typeof gallery !== 'undefined' && Array.isArray(gallery)) {
-    const galleryItems = gallery.slice(0, 6);
+    let currentGalleryItems = [];
 
-    galleryGrid.innerHTML = galleryItems
-      .map(
-        (item, index) => `
-      <div class="gallery-item" data-index="${index}">
-        <img src="${item.image || ''}" alt="${item.title || ''}" loading="lazy">
-        <span class="gallery-badge">${(item.category || 'field').toUpperCase()}</span>
-        <div class="gallery-overlay">
-          <div class="gallery-info">
-            <h3>${item.title || ''}</h3>
-            <span class="gallery-action">
-              View Image
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </span>
+    function renderGalleryGlimpse() {
+      // Shuffle the array to get 6 random items for a dynamic glimpse
+      const shuffled = [...gallery].sort(() => 0.5 - Math.random());
+      currentGalleryItems = shuffled.slice(0, 6);
+
+      // Add fade out effect
+      galleryGrid.style.opacity = '0';
+      
+      setTimeout(() => {
+        galleryGrid.innerHTML = currentGalleryItems
+          .map(
+            (item, index) => `
+          <div class="gallery-item" data-index="${index}">
+            <img src="${item.image || ''}" alt="${item.title || ''}" loading="lazy">
+            <span class="gallery-badge">${(item.category || 'field').toUpperCase()}</span>
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>${item.title || ''}</h3>
+                <span class="gallery-action">
+                  View Image
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    `
-      )
-      .join('');
+        `
+          )
+          .join('');
+          
+        // Fade in
+        galleryGrid.style.opacity = '1';
+        galleryGrid.style.transition = 'opacity 0.4s ease-in-out';
+      }, 300);
+    }
+
+    // Initial render
+    renderGalleryGlimpse();
+
+    // Automatic shuffle setup
+    let autoShuffleInterval = setInterval(renderGalleryGlimpse, 4000);
+
+    // Pause auto-shuffle when hovering over the gallery
+    galleryGrid.addEventListener('mouseenter', () => clearInterval(autoShuffleInterval));
+    galleryGrid.addEventListener('mouseleave', () => {
+      autoShuffleInterval = setInterval(renderGalleryGlimpse, 4000);
+    });
 
     // ==========================================================
     // 11. LIGHTBOX — Gallery Item Click
@@ -434,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!galleryItem) return;
 
       const index = parseInt(galleryItem.getAttribute('data-index'), 10);
-      const item = galleryItems[index];
+      const item = gallery[index];
       if (!item) return;
 
       openModal(`

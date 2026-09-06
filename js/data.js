@@ -192,7 +192,7 @@ const products = [
     unit: "per 25kg bag",
     stock: 180,
     moq: 5,
-    image: "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=600&q=80",
+    image: "assets/images/gallery/soil-dropper.jpg",
     usage: "Apply 8-10 kg per acre by broadcasting or mix with basal fertilizer. Can be dissolved in water for fertigation at 2 kg per 1000L.",
     packaging: "25 kg PP woven bags",
     availability: "In Stock",
@@ -252,7 +252,7 @@ const products = [
     unit: "per 10kg bag",
     stock: 275,
     moq: 10,
-    image: "https://images.unsplash.com/photo-1628352081506-83c43074ed31?auto=format&fit=crop&w=600&q=80",
+    image: "assets/images/gallery/fertilizer-levelling.jpg",
     usage: "Foliar: 2-3 grams per liter water. Soil application: 5-10 kg per acre. Apply at critical growth stages for best results.",
     packaging: "10 kg laminated pouches",
     availability: "In Stock",
@@ -312,7 +312,7 @@ const products = [
     unit: "per 25kg bag",
     stock: 200,
     moq: 8,
-    image: "https://images.unsplash.com/photo-1607513746990-218cc9498260?auto=format&fit=crop&w=600&q=80",
+    image: "assets/images/gallery/epsom-salt.jpg",
     usage: "Apply 100-150 kg per acre as basal dose. Mix well with soil before planting. Reapply every 3-4 months for perennial crops.",
     packaging: "25 kg PP bags",
     availability: "In Stock",
@@ -372,7 +372,7 @@ const products = [
     unit: "per unit",
     stock: 45,
     moq: 2,
-    image: "https://images.unsplash.com/photo-1563861826100-9cb868fdcd1d?auto=format&fit=crop&w=600&q=80",
+    image: "assets/images/gallery/bug-control.jpg",
     usage: "Install at 5-6 feet height in the center of the field. Ensure solar panel faces south. Clean collection tray weekly.",
     packaging: "Individual box with mounting accessories",
     availability: "Limited Stock",
@@ -392,7 +392,7 @@ const products = [
     unit: "per unit",
     stock: 75,
     moq: 3,
-    image: "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=600&q=80",
+    image: "assets/images/gallery/field-spraying.jpg",
     usage: "Fill tank with pre-mixed solution. Pump handle 10-15 times for pressure. Adjust nozzle for fine mist or coarse spray. Clean thoroughly after each use.",
     packaging: "Individual carton with nozzle kit",
     availability: "In Stock",
@@ -551,37 +551,37 @@ const gallery = [
   {
     id: 1,
     image: "assets/images/gallery/cardamom-plantation-wide.jpg",
-    title: "Lush Cardamom Plantation",
+    title: "Smart Farming",
     category: "field"
   },
   {
     id: 2,
-    image: "assets/images/gallery/cardamom-plantation-misty.png",
-    title: "Misty Cardamom Hills",
+    image: "assets/images/gallery/cardamom-capsules-close.jpg",
+    title: "Crop Protection",
     category: "field"
   },
   {
     id: 3,
-    image: "assets/images/gallery/cardamom-capsules-close.jpg",
-    title: "Fresh Cardamom Pods",
+    image: "assets/images/gallery/cardamom-nursery-plantation.jpg",
+    title: "Nursery Plantation",
     category: "field"
   },
   {
     id: 4,
-    image: "assets/images/gallery/cardamom-flowers-bee.jpg",
-    title: "Honeybee Pollinating Cardamom",
+    image: "assets/images/gallery/cardamom-plantation-misty.png",
+    title: "Misty Plantation",
     category: "field"
   },
   {
     id: 5,
-    image: "assets/images/gallery/cardamom-nursery-plantation.jpg",
-    title: "Shade-Grown Cardamom Cultivation",
+    image: "assets/images/gallery/cardamom-warehouse.jpg",
+    title: "Harvesting & Loading",
     category: "field"
   },
   {
     id: 6,
-    image: "assets/images/gallery/cardamom-warehouse.jpg",
-    title: "Cardamom Sorting & Processing Warehouse",
+    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+    title: "Sorting & Processing Warehouse",
     category: "facility"
   },
   {
@@ -616,8 +616,8 @@ const gallery = [
   },
   {
     id: 12,
-    image: "https://images.unsplash.com/photo-1505305976870-c0be1cd39939?auto=format&fit=crop&w=800&q=80",
-    title: "Automated Packaging",
+    image: "assets/images/gallery/fertilizer-levelling.jpg",
+    title: "Fertilizer levelling",
     category: "facility"
   },
   {
@@ -628,15 +628,81 @@ const gallery = [
   },
   {
     id: 14,
-    image: "https://images.unsplash.com/photo-1463171359579-38a96685987a?auto=format&fit=crop&w=800&q=80",
+    image: "assets/images/gallery/field-spraying.jpg",
     title: "Drip Irrigation Demo",
     category: "field"
   },
   {
     id: 15,
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80",
+    image: "assets/images/gallery/dispatch.jpg",
     title: "Dispatch & Logistics",
     category: "facility"
+  },
+  {
+    id: 16,
+    image: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80",
+    title: "Farmer Spraying Pesticides",
+    category: "field"
+  },
+  {
+    id: 17,
+    image: "assets/images/gallery/cardamom-plantation-misty.png",
+    title: "Traditional Plowing with Bullock Cart",
+    category: "field"
+  },
+  {
+    id: 18,
+    image: "assets/images/gallery/fertilizer-levelling.jpg",
+    title: "Green Paddy Field Sunrise",
+    category: "field"
+  },
+  {
+    id: 19,
+    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80",
+    title: "Healthy Corn Field",
+    category: "field"
+  },
+  {
+    id: 20,
+    image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80",
+    title: "Organic Vegetable Harvest",
+    category: "field"
+  },
+  {
+    id: 21,
+    image: "https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?auto=format&fit=crop&w=800&q=80",
+    title: "Modern Greenhouse",
+    category: "facility"
+  },
+  {
+    id: 22,
+    image: "assets/images/gallery/epsom-salt.jpg",
+    title: "Epsom Salt Planting",
+    category: "facility"
+  },
+  {
+    id: 23,
+    image: "assets/images/gallery/corn-harvest.jpg",
+    title: "Corn Harvest",
+    category: "field"
+  },
+  {
+    id: 24,
+    image: "assets/images/gallery/bug-control.jpg",
+    title: "Bug Control Spray",
+    category: "facility"
+  },
+  {
+    id: 25,
+    image: "assets/images/gallery/soil-dropper.jpg",
+    title: "Soil Dropper",
+    category: "facility"
+  },
+  {
+    id: 26,
+    image: "assets/images/gallery/field-spraying.jpg",
+    title: "Field Spraying",
+    category: "field"
   }
 ];
 
@@ -726,22 +792,22 @@ const faqs = [
    PARTNER LOGOS
    ============================================================ */
 const partners = [
-  { id: 1, name: "SWAL", logo: "assets/images/partners/swal.jpg" },
-  { id: 2, name: "Syngenta", logo: "assets/images/partners/syngenta.jpg" },
-  { id: 3, name: "Indofil", logo: "assets/images/partners/indofil.jpg" },
-  { id: 4, name: "Dhanuka", logo: "assets/images/partners/dhanuka.jpg" },
-  { id: 5, name: "Insecticides India Limited", logo: "assets/images/partners/insecticides-india.jpg" },
-  { id: 6, name: "FMC", logo: "assets/images/partners/fmc.jpg" },
-  { id: 7, name: "BASF", logo: "assets/images/partners/basf.jpg" },
-  { id: 8, name: "Gharda Chemicals Limited", logo: "assets/images/partners/gharda-chemicals.jpg" },
-  { id: 9, name: "PI Industries", logo: "assets/images/partners/pi-industries.jpg" },
-  { id: 10, name: "UPL", logo: "assets/images/partners/upl.jpg" },
-  { id: 11, name: "Rallis India Limited", logo: "assets/images/partners/rallis-india.jpg" },
-  { id: 12, name: "Coromandel", logo: "assets/images/partners/coromandel.jpg" },
-  { id: 13, name: "Jivagro", logo: "assets/images/partners/jivagro.jpg" },
-  { id: 14, name: "Adama", logo: "assets/images/partners/adama.jpg" },
-  { id: 15, name: "Corteva Agriscience", logo: "assets/images/partners/corteva.jpg" },
-  { id: 16, name: "Bayer", logo: "assets/images/partners/bayer.jpg" }
+  { id: 1, name: "Syngenta", logo: "assets/images/partners/syngenta.jpg?v=6" },
+  { id: 2, name: "Bayer", logo: "assets/images/partners/bayer.jpg?v=6" },
+  { id: 3, name: "Corteva Agriscience", logo: "assets/images/partners/corteva.png?v=6" },
+  { id: 4, name: "FMC", logo: "assets/images/partners/fmc.png?v=6" },
+  { id: 5, name: "Adama", logo: "assets/images/partners/adama.jpg?v=6" },
+  { id: 6, name: "BASF", logo: "assets/images/partners/basf.jpg?v=6" },
+  { id: 7, name: "Coromandel", logo: "assets/images/partners/coromandel.jpg?v=6" },
+  { id: 8, name: "Dhanuka", logo: "assets/images/partners/dhanuka.jpg?v=6" },
+  { id: 9, name: "Gharda Chemicals", logo: "assets/images/partners/gharda-chemicals.jpg?v=6" },
+  { id: 10, name: "Indofil", logo: "assets/images/partners/indofil.jpg?v=6" },
+  { id: 11, name: "Insecticides India", logo: "assets/images/partners/insecticides-india.jpg?v=6" },
+  { id: 12, name: "Jivagro", logo: "assets/images/partners/jivagro.jpg?v=6" },
+  { id: 13, name: "PI Industries", logo: "assets/images/partners/pi-industries.jpg?v=6" },
+  { id: 14, name: "Rallis India", logo: "assets/images/partners/rallis-india.jpg?v=6" },
+  { id: 15, name: "SWAL", logo: "assets/images/partners/swal.jpg?v=6" },
+  { id: 16, name: "UPL", logo: "assets/images/partners/upl.jpg?v=6" }
 ];
 
 
