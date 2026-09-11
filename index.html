@@ -43,11 +43,11 @@
 
       <ul class="nav-links" role="menubar">
         <li role="none"><a href="#hero" role="menuitem">Home</a></li>
-        <li role="none"><a href="#about" role="menuitem">About</a></li>
         <li role="none"><a href="#partners" role="menuitem">Partners</a></li>
-        <li role="none"><a href="#services" role="menuitem">Products</a></li>
-        <li role="none"><a href="#reviews" role="menuitem">Reviews</a></li>
         <li role="none"><a href="#team" role="menuitem">Team</a></li>
+        <li role="none"><a href="#statistics" role="menuitem">Gallery</a></li>
+        <li role="none"><a href="#about" role="menuitem">About</a></li>
+        <li role="none"><a href="#reviews" role="menuitem">Reviews</a></li>
         <li role="none"><a href="#cta" role="menuitem">Contact</a></li>
       </ul>
 
@@ -65,11 +65,11 @@
   <div class="mobile-menu" role="dialog" aria-label="Mobile navigation menu">
     <ul>
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="#partners">Partners</a></li>
-      <li><a href="#services">Products</a></li>
-      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#team">Team</a></li>
+      <li><a href="#statistics">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#cta">Contact</a></li>
     </ul>
   </div>
@@ -83,11 +83,13 @@
       </div>
       <div class="hero-slide" style="background-image: url('assets/images/hero/plantation.jpg');">
       </div>
-      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');">
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');">
       </div>
       <div class="hero-slide" style="background-image: url('assets/images/hero/field-row.png');">
       </div>
-      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1920&q=80');">
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1920&q=80');">
       </div>
     </div>
     <div class="hero-overlay"></div>
@@ -118,86 +120,6 @@
   </section>
 
   <!-- ============================================================
-       5. ABOUT COMPANY
-       ============================================================ -->
-  <section id="about" aria-label="About SecondLeaf">
-    <div class="container">
-      <h2 class="section-title reveal">About Us</h2>
-      <p class="section-subtitle reveal">Growing together with nature and innovation</p>
-
-      <div class="about-content about-content-simple">
-        <div class="about-text reveal">
-          <p id="about-description"></p>
-
-          <div class="mission-vision">
-            <div class="mission-card">
-              <h3>Our Mission</h3>
-              <p id="about-mission"></p>
-            </div>
-            <div class="vision-card">
-              <h3>Our Vision</h3>
-              <p id="about-vision"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- ============================================================
-       7. SERVICES
-       ============================================================ -->
-  <section id="services" aria-label="Our services">
-    <div class="container">
-      <h2 class="section-title reveal">Our Services</h2>
-      <p class="section-subtitle reveal">Comprehensive agricultural solutions for every need</p>
-      <div class="services-grid" id="services-grid">
-        <!-- Rendered by JS from services array -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       8. KEY FIGURES / STATISTICS
-       ============================================================ -->
-  <section id="statistics" aria-label="Key statistics">
-    <div class="container">
-      <h2 class="section-title reveal">Gallery Glimpse</h2>
-      <p class="section-subtitle reveal">A glimpse into our world</p>
-      <div class="gallery-grid" id="gallery-grid">
-        <!-- Rendered by JS from gallery (first 6 items) -->
-      </div>
-      <div class="gallery-cta reveal" style="text-align: center; margin-top: 40px;">
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline section removed for clean corporate redesign -->
-
-  <!-- ============================================================
-       9. GALLERY PREVIEW
-       ============================================================ -->
-
-
-
-  <!-- ============================================================
-       11. REVIEWS SECTION
-       ============================================================ -->
-  <section id="reviews" aria-label="Customer reviews">
-    <div class="container">
-      <h2 class="section-title reveal">What Our Clients Say</h2>
-      <p class="section-subtitle reveal">Trusted by farmers and agribusinesses across India</p>
-    </div>
-    <div class="reviews-track-wrapper">
-      <div class="reviews-track" id="reviews-track" aria-label="Reviews carousel">
-        <!-- Rendered by JS from reviews array (duplicated for infinite scroll) -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        13. TEAM SECTION
        ============================================================ -->
   <section id="team" aria-label="Our team">
@@ -221,6 +143,52 @@
             <h3>Mr. K. Sathish Agri</h3>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. KEY FIGURES / STATISTICS (Gallery Glimpse)
+       ============================================================ -->
+  <section id="statistics" aria-label="Key statistics">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery Glimpse</h2>
+      <p class="section-subtitle reveal">A glimpse into our world</p>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered by JS from gallery (first 8 items) -->
+      </div>
+      <div class="gallery-cta reveal" style="text-align: center; margin-top: 40px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. ABOUT COMPANY
+       ============================================================ -->
+  <section id="about" aria-label="About SecondLeaf">
+    <div class="container">
+      <h2 class="section-title reveal">About Us</h2>
+      <p class="section-subtitle reveal">Growing together with nature and innovation</p>
+
+      <div class="about-content about-content-simple">
+        <div class="about-text reveal">
+          <p id="about-description"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11. REVIEWS SECTION
+       ============================================================ -->
+  <section id="reviews" aria-label="Customer reviews">
+    <div class="container">
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <p class="section-subtitle reveal">Trusted by farmers and agribusinesses across India</p>
+    </div>
+    <div class="reviews-track-wrapper">
+      <div class="reviews-track" id="reviews-track" aria-label="Reviews carousel">
+        <!-- Rendered by JS from reviews array (duplicated for infinite scroll) -->
       </div>
     </div>
   </section>
@@ -259,16 +227,30 @@
           <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
             <li><a href="store.html">Store</a></li>
             <li><a href="#cta">Contact</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h4>Contact Info</h4>
-          <p>AMARAVATI THEATRE,,<br> Odai Karai St, near BUS STAND, Bharathiyar Nagar, Cumbum, Tamil Nadu 625516.</p>
-          <p>Phone: +91 86080 66541</p>
-          <p>Email: secondleafcumbum@gmail.com</p>
+          <div style="display: flex; align-items: flex-start; margin-bottom: 12px; color: var(--text-secondary);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 384 512" style="margin-right: 12px; margin-top: 4px; flex-shrink: 0;"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+            <p style="margin: 0; line-height: 1.6;">AMARAVATI THEATRE,,<br> Odai Karai St, near BUS STAND, Bharathiyar Nagar, Cumbum, Tamil Nadu 625516.</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px; color: var(--text-secondary);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 512 512" style="margin-right: 12px; flex-shrink: 0;"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+            <p style="margin: 0;">+91 86080 66541</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px; color: var(--text-secondary);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 512 512" style="margin-right: 12px; flex-shrink: 0;"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+            <p style="margin: 0;">secondleafcumbum@gmail.com</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <a href="https://www.instagram.com/secondleaf_enterprises/" target="_blank" rel="noopener" style="display: flex; align-items: center; color: var(--text-secondary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 448 512" style="margin-right: 12px; flex-shrink: 0;"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+              @secondleaf_enterprises
+            </a>
+          </div>
         </div>
         <div class="footer-map">
           <h4>Our Location</h4>
@@ -282,8 +264,10 @@
         <div class="footer-social-links">
 
           <a href="https://www.instagram.com/secondleaf_enterprises/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 448 512" style="margin-right: 8px; vertical-align: middle;">
-              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 448 512"
+              style="margin-right: 8px; vertical-align: middle;">
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
             </svg>
             @secondleaf_enterprises
           </a>

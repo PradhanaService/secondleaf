@@ -703,6 +703,18 @@ const gallery = [
     image: "assets/images/gallery/field-spraying.jpg",
     title: "Field Spraying",
     category: "field"
+  },
+  {
+    id: 27,
+    image: "assets/images/gallery/coconut-fertilizer.png",
+    title: "Coconut tree with fertilizer application",
+    category: "field"
+  },
+  {
+    id: 28,
+    image: "assets/images/gallery/banana-fertilizer.png",
+    title: "Banana tree with fertilizer application",
+    category: "field"
   }
 ];
 

@@ -321,17 +321,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const servicesGrid = document.getElementById('services-grid');
 
   if (servicesGrid && typeof services !== 'undefined' && Array.isArray(services)) {
-    servicesGrid.innerHTML = services
-      .map(
-        (service) => `
-      <div class="service-card reveal">
-        <h3>${service.title || ''}</h3>
-        <p>${service.description || ''}</p>
-      </div>
-    `
-      )
-      .join('');
+    // Removed rendering of services grid per client request
   }
+
 
   // ==========================================================
   // 8. RENDER STATISTICS
@@ -405,9 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentGalleryItems = [];
 
     function renderGalleryGlimpse() {
-      // Shuffle the array to get 6 random items for a dynamic glimpse
+      // Shuffle the array to get 8 random items for a dynamic glimpse
       const shuffled = [...gallery].sort(() => 0.5 - Math.random());
-      currentGalleryItems = shuffled.slice(0, 6);
+      currentGalleryItems = shuffled.slice(0, 8);
+
 
       // Add fade out effect
       galleryGrid.style.opacity = '0';
@@ -568,19 +561,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reviewsTrack.innerHTML = duplicatedReviews
       .map(
-        (review) => `
+        (review) => {
+          const initial = review.name ? review.name.charAt(0).toUpperCase() : 'C';
+          return `
       <div class="review-card">
         <div class="client-info">
-          <div>
+          <div class="client-avatar">${initial}</div>
+          <div class="client-details">
             <h4>${review.name || ''}</h4>
             <span class="client-location">${review.location || ''}</span>
           </div>
         </div>
         <div class="stars">${renderStars(review.rating)}</div>
-        <p class="review-text">${review.review || ''}</p>
+        <p class="review-text">"${review.review || ''}"</p>
         <span class="review-company">${review.company || ''}</span>
       </div>
-    `
+    `;
+        }
       )
       .join('');
 
@@ -605,9 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const partnersTrack = document.getElementById('partners-track');
 
   if (partnersTrack && typeof partners !== 'undefined' && Array.isArray(partners)) {
-    const duplicatedPartners = [...partners, ...partners];
-
-    partnersTrack.innerHTML = duplicatedPartners
+    partnersTrack.innerHTML = partners
       .map(
         (partner) => `
       <div class="partner-logo">

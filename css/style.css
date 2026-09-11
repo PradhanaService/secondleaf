@@ -89,6 +89,7 @@ html {
   scroll-padding-top: 100px; /* Offset for sticky navbar */
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -209,9 +210,11 @@ p {
    4. Reusable Utilities
    ============================================================ */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--container-padding);
+  box-sizing: border-box;
 }
 
 section {
@@ -1035,47 +1038,11 @@ section {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  text-align: center;
 }
 
 .about-text p {
   margin-bottom: 20px;
-}
-
-.mission-vision {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 32px;
-}
-
-.mission-card,
-.vision-card {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 32px 24px;
-  box-shadow: 0 2px 12px var(--shadow), 0 8px 30px rgba(0, 0, 0, 0.04);
-  transition: all var(--transition);
-  border: 1px solid var(--border);
-}
-
-.mission-card:hover,
-.vision-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 30px var(--shadow-lg), 0 16px 50px rgba(0, 0, 0, 0.06);
-}
-
-.mission-card h3,
-.vision-card h3 {
-  margin-bottom: 12px;
-  color: var(--text);
-}
-
-.mission-card p,
-.vision-card p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  margin-bottom: 0;
-  line-height: 1.6;
 }
 
 .values-grid {
@@ -1660,45 +1627,47 @@ section {
 }
 
 .partners-track-wrapper {
-  overflow: hidden;
   width: 100%;
   position: relative;
 }
 
 .partners-track {
-  display: flex;
-  gap: 24px;
-  animation: partnerScroll 34s linear infinite;
-  width: max-content;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
-.partners-track:hover {
-  animation-play-state: paused;
+@media (max-width: 768px) {
+  .partners-track {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .partner-logo {
-  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 220px;
-  height: 110px;
-  padding: 14px 18px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  padding: 10px;
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: 0 2px 12px var(--shadow);
+  box-sizing: border-box;
 }
 
 .partner-logo img {
-  max-height: 80px;
-  max-width: 180px;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: none;
-  opacity: 1;
   transition: all var(--transition);
 }
 
@@ -1709,6 +1678,7 @@ section {
 .footer-map iframe {
   display: block;
   width: 100%;
+  max-width: 100%;
   min-height: 180px;
 }
 
@@ -2658,19 +2628,8 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .mission-vision {
-    grid-template-columns: 1fr;
-  }
 
-  .partner-logo {
-    width: 180px;
-    height: 96px;
-  }
 
-  .partner-logo img {
-    max-width: 150px;
-    max-height: 66px;
-  }
 
   /* Footer */
   .footer-grid {
@@ -3020,4 +2979,138 @@ section {
     /* If you have a BLACK background you want to remove, use mix-blend-mode: screen; instead. 
        Note: 'screen' will make the logo invisible if the container background is #fff (white). */
     mix-blend-mode: multiply;
+}
+
+/* ============================================================
+   Mobile Redesign (<= 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  /* --- REVIEWS SECTION --- */
+  #reviews {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .reviews-track {
+    scroll-snap-type: x mandatory;
+  }
+  .review-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin: 0 12px 16px;
+    scroll-snap-align: center;
+    border: none;
+    min-width: 85vw;
+  }
+  .review-card .client-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .review-card .client-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .review-card .client-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .review-card .client-details h4 {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .review-card .client-location {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .review-card .stars {
+    display: flex;
+    gap: 2px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    color: #f59e0b;
+    font-size: 0.9rem;
+  }
+  .review-card .review-text {
+    font-style: italic;
+    line-height: 1.5;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+  .review-card .review-company {
+    display: block;
+    font-weight: bold;
+    color: var(--primary);
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* --- FOOTER SECTION --- */
+  .footer-grid {
+    gap: 0;
+  }
+  .footer-brand, .footer-links, .footer-contact, .footer-map {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+    margin-bottom: 16px;
+  }
+  .footer-brand {
+    border-top: none;
+    padding-top: 0;
+  }
+  .footer-brand p,
+  .footer-contact p,
+  .footer-links ul li a,
+  .footer-contact > div {
+    font-size: 0.85rem;
+  }
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-map h4 {
+    margin-bottom: 12px;
+  }
+  .footer-links ul li a {
+    display: block;
+    padding: 3px 0;
+    transition: opacity 0.2s;
+  }
+  .footer-links ul li a:active,
+  .footer-links ul li a:focus {
+    opacity: 0.7;
+  }
+  .footer-contact .contact-item,
+  .footer-contact > div {
+    margin-bottom: 8px !important;
+  }
+  .footer-map {
+    margin-top: 12px;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+    margin-top: 16px;
+    text-align: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-social-links {
+    justify-content: center;
+  }
 }
