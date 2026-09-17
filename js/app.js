@@ -125,20 +125,43 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('active');
       }
     });
+
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    }
   }
 
   // ==========================================================
   // 5. SMOOTH SCROLLING FOR ANCHOR LINKS
   // ==========================================================
-  // Let the browser handle smooth scrolling natively via CSS
-  // (scroll-behavior: smooth). We only close the mobile menu.
+  // Custom scroll handling for precise alignment
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', () => {
+    anchor.addEventListener('click', function (e) {
       // Close mobile menu if open
       if (hamburger && mobileMenu) {
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('active');
+      }
+
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
       }
     });
   });
